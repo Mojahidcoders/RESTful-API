@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instahub</title>
+</head>
+<body>
+    <h1>InstaHub</h1>
+    <% for (post of posts ) { %>
+        <div>
+            <h3>@ <%= post.title %></h3>
+            <h4> <%= post.caption %></h4>
+            <h4> <%= post.image %></h4>
+            <br> 
+            <form method="post" action="/posts/<%=post.title %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+   <% } %>
+   <a href="http://localhost:3000/posts/new">create new posts</a>
+</body>
+</html>
